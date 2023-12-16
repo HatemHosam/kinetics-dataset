@@ -9,10 +9,10 @@ root_dl_targz="k600_targz"
 [ ! -d $root_dl_targz ] && mkdir $root_dl_targz
 
 # Download train tars, will resume
-curr_dl=${root_dl_targz}/train
-url=https://s3.amazonaws.com/kinetics/600/train/k600_train_path.txt
-[ ! -d $curr_dl ] && mkdir -p $curr_dl
-wget -c -i $url -P $curr_dl
+#curr_dl=${root_dl_targz}/train
+#url=https://s3.amazonaws.com/kinetics/600/train/k600_train_path.txt
+#[ ! -d $curr_dl ] && mkdir -p $curr_dl
+#wget -c -i $url -P $curr_dl
 
 # Download validation tars, will resume
 curr_dl=${root_dl_targz}/val

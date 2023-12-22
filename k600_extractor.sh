@@ -27,19 +27,19 @@ find $curr_dl -type f | while read file; do mv "$file" `echo $file | tr ' ' '_'`
 tar_list=$(ls $curr_dl)
 for f in $tar_list
 do
-	[[ $f == *.tar.gz ]] && echo Extracting $curr_dl/$f to $curr_extract && tar zxf $curr_dl/$f -C $curr_extract
+	[[ $f == *.tar.gz ]] && mkdir -p $curr_extract/${f%.*.*} && echo Extracting $curr_dl/$f to $curr_extract/${f%.*.*} && tar zxf $curr_dl/$f -C $curr_extract/${f%.*.*} #&& rm $curr_dl/$f
 done
 
 # Extract test
-curr_dl=$root_dl_targz/test
-curr_extract=$root_dl/test
-[ ! -d $curr_extract ] && mkdir -p $curr_extract
-find $curr_dl -type f | while read file; do mv "$file" `echo $file | tr ' ' '_'`; done
-tar_list=$(ls $curr_dl)
-for f in $tar_list
-do
-	[[ $f == *.tar.gz ]] && echo Extracting $curr_dl/$f to $curr_extract && tar zxf $curr_dl/$f -C $curr_extract
-done
+#curr_dl=$root_dl_targz/test
+#curr_extract=$root_dl/test
+#[ ! -d $curr_extract ] && mkdir -p $curr_extract
+#find $curr_dl -type f | while read file; do mv "$file" `echo $file | tr ' ' '_'`; done
+#tar_list=$(ls $curr_dl)
+#for f in $tar_list
+#do
+#	[[ $f == *.tar.gz ]] && echo Extracting $curr_dl/$f to $curr_extract && tar zxf $curr_dl/$f -C $curr_extract
+#done
 
 # Extraction complete
 echo -e "\nExtractions complete!"

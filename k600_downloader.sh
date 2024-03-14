@@ -21,10 +21,10 @@ url=https://s3.amazonaws.com/kinetics/600/val/k600_val_path.txt
 wget -c -i $url -P $curr_dl
 
 # Download test tars, will resume
-#curr_dl=${root_dl_targz}/test
-#url=https://s3.amazonaws.com/kinetics/600/test/k600_test_path.txt
-#[ ! -d $curr_dl ] && mkdir -p $curr_dl
-#wget -c -i $url -P $curr_dl
+# curr_dl=${root_dl_targz}/test
+# url=https://s3.amazonaws.com/kinetics/600/test/k600_test_path.txt
+# [ ! -d $curr_dl ] && mkdir -p $curr_dl
+# wget -c -i $url -P $curr_dl
 
 # Download annotations csv files
 curr_dl=${root_dl}/annotations
